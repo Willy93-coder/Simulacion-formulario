@@ -8,3 +8,7 @@ const emailInput = document.getElementById("email");
 eventListener(userNameInput, validateInput);
 eventListener(firstNameInput, validateInput);
 eventListener(emailInput, validateInput);
+
+formHtml.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
