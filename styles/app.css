@@ -1,0 +1,149 @@
+/* Variables */
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --font-thin: 100;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 700;
+    --font-little-size: .875rem;
+    --green: #228b22;
+    --light-green: #2aae2a;
+    --dark-green: #1b6f1b;
+    --light-grey: #c0c0c0;
+    --grey: #808080;
+    --white: #fff;
+    --blue: #0075ff;
+    --danger-red: #cc0000;
+    --warning-red: #f66060;
+}
+/* utility class */
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1024px);
+    justify-content: center;
+    align-content: center;
+}
+
+.block {
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 70%;
+    justify-content: center;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.m-t {
+    margin-top: 1rem;
+}
+
+.m-b {
+    margin-bottom: 1rem;
+}
+.b-box {
+    box-sizing: border-box;
+}
+
+.p-input {
+    padding: .3rem .3rem;
+}
+
+.m-b-input {
+    margin-bottom: .3rem;
+}
+
+.btn {
+    padding: .5rem 1.5rem;
+}
+
+.danger {
+    color: var(--danger-red);
+}
+
+.warning {
+    background-color: var(--warning-red);
+}
+
+.hidden {
+    display: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.t-xy {
+    top: 23%;
+    transform: translate(-150%, 0);
+}
+
+.op-0 {
+    opacity: 0;
+}
+
+/* Media query */
+@media screen and (min-width: 600px) {
+    .form {
+        display: grid;
+        grid-template-columns: 50%;
+        justify-content: center;
+    }
+}
+
+/* Style */
+body {
+    font-family: var(--font-family);
+}
+
+h2 {
+    color: var(--green);
+}
+
+button {
+    color: var(--white);
+    background-color: var(--green);
+    border: none;
+    border-radius: .3rem;
+}
+
+button:hover {
+    background-color: var(--light-green);
+}
+
+label {
+    color: var(--dark-green);
+}
+
+input {
+    border: 1px solid var(--dark-green);
+    border-radius: .3rem;
+}
+
+input::placeholder{
+    color: var(--grey);
+    font-weight: var(--font-thin);
+}
+
+input:focus{
+    border: 1px solid var(--blue);
+    outline: none;
+}
+
+p {
+    font-size: var(--font-little-size);
+}
