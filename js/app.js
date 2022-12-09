@@ -1,4 +1,9 @@
-import { validateInput, eventListener } from "./functions.js";
+import {
+    validateInput,
+    eventListener,
+    validateForm,
+    sendForm,
+} from "./functions.js";
 
 const formHtml = document.getElementById("form");
 const userNameInput = document.getElementById("username");
@@ -9,6 +14,4 @@ eventListener(userNameInput, validateInput);
 eventListener(firstNameInput, validateInput);
 eventListener(emailInput, validateInput);
 
-formHtml.addEventListener("submit", (e) => {
-    e.preventDefault();
-});
+sendForm(formHtml, validateForm);

@@ -6,6 +6,10 @@ export const validateInput = (e) => {
     validateRegex(regex[inputName], inputValue, inputName);
 };
 
+export const validateForm = (e) => {
+    e.preventDefault();
+};
+
 // Función que me devuelve un objeto con las expresiones regulares
 const regexExpression = () => {
     return {
@@ -41,4 +45,9 @@ const validateRegex = (expression, input, field) => {
 export const eventListener = (input, func) => {
     input.addEventListener("keyup", func);
     input.addEventListener("blur", func);
+};
+
+// Función para enviar el formulario
+export const sendForm = (form, func) => {
+    form.addEventListener("submit", func);
 };
