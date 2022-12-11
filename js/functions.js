@@ -12,9 +12,10 @@ export const validateForm = (e) => {
     const usernameLength = inputsLength.username;
     const firstnameLength = inputsLength.firstname;
     const emailLength = inputsLength.email;
+    const passwordLength = inputsLength.password;
     const form = document.getElementById('form');
 
-    if (!validateAllInputsLength(usernameLength, firstnameLength, emailLength)) {
+    if (!validateAllInputsLength(usernameLength, firstnameLength, emailLength, passwordLength)) {
         e.preventDefault();
         console.log("No se puede enviar el formulario con errores");
     } else {
@@ -30,6 +31,7 @@ const inputLength = () => {
         username: document.getElementById("username").value.length,
         firstname: document.getElementById("firstname").value.length,
         email: document.getElementById("email").value.length,
+        password: document.getElementById("password").value.length
     };
 };
 
@@ -39,6 +41,7 @@ const regexExpression = () => {
         username: /^[a-zA-Z0-9\_\-]{4,16}$/,
         firstname: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        password: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
     };
 };
 
@@ -46,13 +49,15 @@ const regexExpression = () => {
 const validateAllInputsLength = (
     usernameLength,
     firstnameLength,
-    emailLength
+    emailLength,
+    passwordLenght
 ) => {
     const usernameValidation = usernameLength >= 4 && usernameLength <= 16;
     const firstnameValidation = firstnameLength >= 3 && firstnameLength <= 40;
     const emailValidation = emailLength > 0;
+    const passwordValidation = passwordLenght >=8 && passwordLenght <= 16;
 
-    if (usernameValidation && firstnameValidation && emailValidation) {
+    if (usernameValidation && firstnameValidation && emailValidation && passwordValidation) {
         document.getElementById('success_message').classList.remove("hidden");
         document.getElementById('error_message').classList.add("hidden");
         return true;
